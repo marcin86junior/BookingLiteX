@@ -1,8 +1,6 @@
 BookingLite
 =====================
 
-![alt text](https://github.com/marcin86junior/interBANK/blob/main/readme.PNG)
-
 Overview
 --------
 
@@ -29,6 +27,13 @@ Installation:
 	add SECRET_KEY = 'xxx' in settings.py
 	python .\manage.py runserver
 	http://127.0.0.1:8000/
+
+    Run frontend:
+    cd frontend\
+    npm install
+    npm install axios react-router-dom
+    npm start
+    The frontend should now be running at `http://localhost:3000/`.
 
 
 Testing:
