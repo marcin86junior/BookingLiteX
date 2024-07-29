@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import './AddFlat.css'; // Import the CSS file
 
 function AddFlat() {
   const [name, setName] = useState('');
@@ -19,7 +20,7 @@ function AddFlat() {
   };
 
   return (
-    <div>
+    <div className="add-flat-section">
       <h1>Add Flat</h1>
       <form onSubmit={handleSubmit}>
         <input

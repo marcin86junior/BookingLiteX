@@ -18,12 +18,23 @@ function ViewFlats() {
 
   return (
     <div className="view-flats-section">
-      <h1>Flat List: </h1>
-      <ul>
-        {flats.map(flat => (
-          <li key={flat.id}>{flat.name}</li>
-        ))}
-      </ul>
+      <h1>Flat List:</h1>
+      <table className="flats-table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+          </tr>
+        </thead>
+        <tbody>
+          {flats.map(flat => (
+            <tr key={flat.id}>
+              <td>{flat.id}</td>
+              <td>{flat.name}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
       <Link to="/add-booking" className="add-booking-button">Add Booking</Link>
     </div>
   );

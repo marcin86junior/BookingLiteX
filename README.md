@@ -1,4 +1,4 @@
-BookingLite
+BookingLite (Django+React app)
 =====================
 
 Overview

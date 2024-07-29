@@ -1,7 +1,7 @@
 // src/components/AddBooking.js
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-
+import './AddBooking.css';  // Import the CSS file
 
 function AddBooking() {
   const [flats, setFlats] = useState([]);
@@ -40,7 +40,7 @@ function AddBooking() {
 
   return (
     <div className="add-booking">
-      <h1>Add Booking</h1>
+      <h1></h1>
       <form onSubmit={handleSubmit}>
         <div className="form-group">
           <label htmlFor="flat">Flat:</label>
