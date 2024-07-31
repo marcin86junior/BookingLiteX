@@ -39,7 +39,6 @@ Installation:
 Testing:
 --------
 
-    TO BE DONE
 	python manage.py test
 
 
