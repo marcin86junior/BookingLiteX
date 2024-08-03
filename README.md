@@ -57,10 +57,10 @@ Docker:
 	cd booking_project\
 	booking_project> docker-compose up --build
 
-	Running frontend (in new terminal):
+	Running frontend: (in new terminal)
 	cd..
 	change format file in \docker-entrypoint.sh    CRLF->LF (save!)
 	main_folder> docker-compose up --build
 
 	Problems with merging to 1 docker-compose.yml:
-	main_folder> docker-compose (not working).yml (file+error log)
+	main_folder> docker-compose (not working).yml (file + error log) 
