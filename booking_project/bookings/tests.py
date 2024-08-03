@@ -5,11 +5,11 @@ from rest_framework import status
 from datetime import date
 
 
-class UserViewSetTest(TestCase):
+class Test(TestCase):
     def setUp(self):
         self.client = APIClient()
 
-    def test_main_page_display_before_logged_in(self):
+    def test_main_page_display(self):
         response = self.client.get("/")
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertIn("Welcome to the Booking App", response.content.decode("utf-8"))
@@ -25,7 +25,7 @@ class UserViewSetTest(TestCase):
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
         self.assertTrue(Flat.objects.filter(name="flat-2").exists())
 
-    def test_booking_previous_booking_id(self):
+    def test_booking_model(self):
         flat1 = Flat.objects.create(name="flat-1")
         flat2 = Flat.objects.create(name="flat-2")
 
@@ -41,4 +41,16 @@ class UserViewSetTest(TestCase):
             Booking.objects.create(**booking_data)
 
         response = self.client.get("/api/bookings/", format="json")
+        response_data = response.json()
+        print(response_data)
         self.assertEqual(response.status_code, status.HTTP_200_OK)
+
+        expected_data = [
+            {'id': 1, 'previous_booking_id': None, 'checkin': '2022-01-01', 'checkout': '2022-01-13', 'flat': 1},
+            {'id': 2, 'previous_booking_id': 1, 'checkin': '2022-01-20', 'checkout': '2022-02-10', 'flat': 1},
+            {'id': 3, 'previous_booking_id': 2, 'checkin': '2022-02-20', 'checkout': '2022-03-10', 'flat': 1},
+            {'id': 4, 'previous_booking_id': None, 'checkin': '2022-01-02', 'checkout': '2022-01-20', 'flat': 2},
+            {'id': 5, 'previous_booking_id': 4, 'checkin': '2022-01-20', 'checkout': '2022-02-11', 'flat': 2},
+        ]
+
+        self.assertEqual(response_data, expected_data)
