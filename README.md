@@ -45,32 +45,21 @@ Testing:
 Docker:
 -------
 
-    TO BE DONE
-	Create new folder "interBANK" and open it:
-	git clone https://github.com/marcin86junior/interBANK .
-	cd inter_project\
+	Create new folder "BookingLite" and open it:
+	git clone https://github.com/marcin86junior/BookingLiteX .
+	cd booking_project\
 	"Open Doker Desktop"
 	change format file in \inter_project\docker-entrypoint.sh    CRLF->LF (save!)
 	add SECRET_KEY = 'xxx' in settings.py
-	docker-compose up
-	http://127.0.0.1:8000/
-	Test:
-	docker-compose run web python3 manage.py test
 
+    *Working but should be in 1 docker-compose.yml.
+	*Now we heve 2 off docker-compose.yml
 
-Instructions:
--------
+	Running backend:
+	booking_project> docker-compose up --build
 
-    TO BE DONE
+	Running frontend (in new terminal):
+	main_folder> docker-compose up --build
 
-
-Tests:
--------
-
-    TO BE DONE
-
-
-Todo list:
--------
-
-    TO BE DONE
+	Problems with merging to 1 docker-compose.yml:
+	main_folder> docker-compose (not working).yml (file+error log)
