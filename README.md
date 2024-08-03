@@ -45,20 +45,21 @@ Testing:
 Docker:
 -------
 
-	Create new folder "BookingLite" and open it:
-	git clone https://github.com/marcin86junior/BookingLiteX .
-	cd booking_project\
-	"Open Doker Desktop"
-	change format file in \inter_project\docker-entrypoint.sh    CRLF->LF (save!)
-	add SECRET_KEY = 'xxx' in settings.py
-
     *Working but should be in 1 docker-compose.yml.
 	*Now we heve 2 off docker-compose.yml
 
+	Create new folder "BookingLite" and open it:
+	git clone https://github.com/marcin86junior/BookingLiteX .
+	add SECRET_KEY = 'xxx' in settings.py
+
 	Running backend:
+	change format file in \booking_project\docker-entrypoint.sh    CRLF->LF (save!)
+	cd booking_project\
 	booking_project> docker-compose up --build
 
 	Running frontend (in new terminal):
+	cd..
+	change format file in \docker-entrypoint.sh    CRLF->LF (save!)
 	main_folder> docker-compose up --build
 
 	Problems with merging to 1 docker-compose.yml:
