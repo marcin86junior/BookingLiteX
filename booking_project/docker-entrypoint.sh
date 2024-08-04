@@ -1,11 +1,16 @@
 #!/bin/bash
 
-# Apply database migrations
+# Apply database makemigrations
 echo "Apply database makemigrations"
 python manage.py makemigrations
 
+# Apply database migrations
 echo "Apply database migrations"
 python manage.py migrate
+
+# Run test
+echo "Starting test"
+python manage.py test
 
 # Start server
 echo "Starting server"
