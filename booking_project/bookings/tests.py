@@ -4,7 +4,6 @@ from rest_framework.test import APIClient
 from rest_framework import status
 from datetime import date
 
-
 class Test(TestCase):
     def setUp(self):
         self.client = APIClient()

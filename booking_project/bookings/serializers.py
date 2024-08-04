@@ -20,3 +20,16 @@ class BookingSerializer(serializers.ModelSerializer):
         ).order_by('-checkout').first()
         
         return previous_booking.id if previous_booking else None
+
+    def create(self, validated_data):
+        booking = Booking(**validated_data)
+        booking.clean()  # Manually call the clean method to ensure validation
+        booking.save()
+        return booking
+
+    def update(self, instance, validated_data):
+        for attr, value in validated_data.items():
+            setattr(instance, attr, value)
+        instance.clean()  # Manually call the clean method to ensure validation
+        instance.save()
+        return instance
