@@ -1,7 +1,13 @@
 version: '3.8'
 
 services:
-
+  web:
+    build:
+      context: ./booking_project
+      dockerfile: Dockerfile
+    entrypoint: /docker-entrypoint.sh
+    ports:
+      - "8000:8000"
   frontend:
     build:
       context: ./frontend
