@@ -1,10 +1,10 @@
-BookingLite (Django+React app)
+BookingLX (Django+React app)
 =====================
 
 Overview
 --------
 
-BookingLITE is simple banbooking web application created using Django REST Framework.
+BookingLX is simple banbooking web application created using Django REST Framework.
 
 Requirements:
 -------------
@@ -16,8 +16,8 @@ Requirements:
 Installation:
 -------------
 
-	Create new folder "BookingLite" and open it:
-	git clone https://github.com/marcin86junior/BookingLiteX .
+	Create new folder "BookingLX" and open it:
+	git clone https://github.com/marcin86junior/BookingLX .
 	python -m venv myvenv
 	.\myvenv\Scripts\activate
 	pip install -r requirements.txt
@@ -40,7 +40,7 @@ Docker:
 -------
 
 	Create new folder "BookingLite" and open it:
-	git clone https://github.com/marcin86junior/BookingLiteX .
+	git clone https://github.com/marcin86junior/BookingLX .
 	add SECRET_KEY = 'xxx' in settings.py
 	change format file in \booking_project\docker-entrypoint.sh    CRLF->LF (save!)
 	docker-compose up --build
